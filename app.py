@@ -1,5 +1,3 @@
-import pandas as pd
-
 class Book:
     def __init__ (self, image, title, author, genre, pdf, summary):
         self.image = image
@@ -27,5 +25,3 @@ class Library:
 
     def display_books(self):
         return self.books
-    
-
