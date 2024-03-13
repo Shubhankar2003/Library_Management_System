@@ -1,5 +1,5 @@
 import streamlit as st
-from main import Library
+from app import Library
 import base64
 
 def displayPDF(file):
