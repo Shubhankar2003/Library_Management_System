@@ -1,6 +1,6 @@
 import streamlit as st
-from app import Book
-from app import Library
+from main import Book
+from main import Library
 
 def main():
     st.set_page_config(page_title="Add Book", page_icon="➕")
