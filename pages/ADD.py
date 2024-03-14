@@ -3,8 +3,9 @@ from app import Book
 from app import Library
 
 def main():
-    st.set_page_config(page_title="Add Book", page_icon="➕")
+    # Set page configuration
 
+    # Continue with other Streamlit commands
     library = Library()
     st.subheader("Add a new book")
     title = st.text_input('Title')
@@ -24,5 +25,8 @@ def main():
     library.add_book(book1)
     library.add_book(book2)
 
+    return library
+
 if __name__ == "__main__":
+    st.set_page_config(page_title="Add Book", page_icon="➕")
     main()

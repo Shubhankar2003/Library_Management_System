@@ -1,5 +1,5 @@
 import streamlit as st
-from app import Library
+from pages.ADD import main
 import base64
 
 def displayPDF(file):
@@ -13,14 +13,16 @@ def displayPDF(file):
     # Displaying File
     st.markdown(pdf_display, unsafe_allow_html=True)
 
-def main():
+def view():
     st.title('Library Management System')
 
-    # Call the function to list books
-    list_books()
+    # Call the function to retrieve the library object
+    library = main()
 
-def list_books():
-    library = Library()
+    # Display the list of books
+    list_books(library)
+
+def list_books(library):
     st.subheader('Books in the Library:')
     
     # Display book data in a table
@@ -39,4 +41,4 @@ def list_books():
         st.write('\n')
 
 if __name__ == "__main__":
-    main()
+    view()
