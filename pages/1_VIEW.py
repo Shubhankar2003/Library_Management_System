@@ -1,5 +1,5 @@
 import streamlit as st
-from pages.ADD import main
+from lib import get_library
 import base64
 
 def displayPDF(file):
@@ -16,8 +16,7 @@ def displayPDF(file):
 def view():
     st.title('Library Management System')
 
-    # Call the function to retrieve the library object
-    library = main()
+    library = get_library()
 
     # Display the list of books
     list_books(library)
