@@ -18,6 +18,7 @@ def view():
 
     # Call the function to retrieve the library object
     library = main()
+
     # Display the list of books
     list_books(library)
 

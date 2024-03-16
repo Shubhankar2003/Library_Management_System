@@ -5,6 +5,11 @@ from app import Library
 def main():
 
     # Continue with other Streamlit commands
+    if 'library' not in st.session_state:
+        st.session_state.library = Library()
+
+    library = st.session_state.library
+
     library = Library()
     st.subheader("Add a new book")
     title = st.text_input('Title')
@@ -19,6 +24,12 @@ def main():
         library.add_book(new_book)
         st.success('Book added successfully! \n')
         f = open("books.txt", "a")
+        f.write(f'''
+                Title: {new_book.title}
+                Author: {new_book.author}
+                Genre: {new_book.genre}
+                Summary: {new_book.summary}
+                ''')
         f.close()
 
     book1 = Book("images/The_Art_of_War_(Giles,_1910).pdf.jpg", "Title 1", "Author 1", "Genre 1", "books/The_Art_Of_War.pdf", "Summary1")
